@@ -1,0 +1,3 @@
+# OCR 端到端识别:CRNN
+## ocr识别采用GRU+CTC端到到识别技术，实现不分隔识别不定长文字
+提供keras 与pytorch版本的训练代码，在理解keras的基础上，可以切换到pytorch版本，此版本更稳定
