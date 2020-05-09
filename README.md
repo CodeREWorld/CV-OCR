@@ -18,7 +18,6 @@ sh setup.sh
 sh setup-cpu.sh
 ##CPU python3环境
 sh setup-python3.sh
-
 使用环境：python3.6+tensorflow1.7+cpu/gpu
 ```
 
