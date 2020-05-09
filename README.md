@@ -1,4 +1,4 @@
-# 基于tensorflow、keras/pytorch实现对图片文字检测及端到端的OCR中文文字识别
+# 基于tensorflow、keras/pytorch实现对图片文字检测及端到端的OCR文字识别
 
 
 ## 实现功能
@@ -80,12 +80,6 @@ parser.add_argument(
 `===========================================================`
 ![ctpn+crnn结果2](./img/tmp2识别结果.png)
 
-### tensorflow版本crnn，计划尝试当前的各种trick(dropout,bn,learning_decay等)
-```
-对于纯文字的识别结果达到较高精度，可以在crnn网络中继续加以改进，现在的crnn中的cnn有点浅，
-并且rnn层为单层双向+attention，目前正在针对这个地方进行改动，使用迁移学习，以restnet为特征提取层，
-使用多层双向动态rnn+attention+ctc的机制，将模型加深，目前正在进行模型搭建。
-```
 
 ## 在思乐中的运用
 从主播的直播间评论区可获得新进入直播间粉丝信息，以及直播间粉丝实时评论，
