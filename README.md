@@ -92,7 +92,7 @@ parser.add_argument(
 `===========================================================`
 ![ctpn+crnn结果2](./test/test_result.png)
 
-### tensorflow版本crnn，计划尝试当前的各种trick(dropuout,bn,learning_decay等)
+### tensorflow版本crnn，计划尝试当前的各种trick(dropout,bn,learning_decay等)
 ```
 可以看到，对于纯文字的识别结果达到较高精度，可以在crnn网络中继续加以改进，现在的crnn中的cnn有点浅，
 并且rnn层为单层双向+attention，目前正在针对这个地方进行改动，使用迁移学习，以restnet为特征提取层，
