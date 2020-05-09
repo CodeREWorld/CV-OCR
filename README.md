@@ -41,14 +41,10 @@ sh setup-python3.sh
  
 
 # OCR 端到端识别:CRNN
-## ocr识别采用GRU+CTC端到到识别技术，实现不分隔识别不定长文字
+## ocr识别采用GRU+CTC端到端识别技术，实现不分隔识别不定长文字
 提供keras 与pytorch版本的训练代码，在理解keras的基础上，可以切换到pytorch版本，此版本更稳定
 
 
-## 测试网络
-```
-运行demo.py  写入测试图片的路径即可，如果想要显示ctpn的结果，修改文件./ctpn/ctpn/other.py 的draw_boxes函数的最后部分，cv2.inwrite('dest_path',img)，如此，可以得到ctpn检测的文字区域框以及图像的ocr识别结果
-```
 ## 训练网络
 ### 1 对ctpn进行训练
 * 定位到路径--./ctpn/ctpn/train_net.py
@@ -76,31 +72,22 @@ parser.add_argument(
 [pytorch预训练权重](https://pan.baidu.com/s/1LEDNHEr3luloB7eZK6GOeA)
 
 
-
-
 # 识别结果显示
 ## 文字检测及OCR识别结果
-![ctpn原始图像1](./test/ttttt.png)
+![示例图像1](./img/tmp1.png)
 `===========================================================`
-![ctpn检测1](./test/test1.png)
-`===========================================================`
-![ctpn+crnn结果1](./test/ttttt_result.png)
+![ctpn+crnn结果1](./img/tmp1识别结果.png)
 
-![ctpn原始图像2](./test/test.png)
+![示例图像2](./img/tmp2.jpg)
 `===========================================================`
-![ctpn检测2](./test/test_pre.png)
-`===========================================================`
-![ctpn+crnn结果2](./test/test_result.png)
+![ctpn+crnn结果2](./img/tmp2识别结果.png)
 
-### tensorflow版本crnn，计划尝试当前的各种trick(dropout,bn,learning_decay等)
+### tensorflow版本crnn，计划尝试当前的各种trick(dropuout,bn,learning_decay等)
 ```
-可以看到，对于纯文字的识别结果达到较高精度，可以在crnn网络中继续加以改进，现在的crnn中的cnn有点浅，
+对于纯文字的识别结果达到较高精度，可以在crnn网络中继续加以改进，现在的crnn中的cnn有点浅，
 并且rnn层为单层双向+attention，目前正在针对这个地方进行改动，使用迁移学习，以restnet为特征提取层，
 使用多层双向动态rnn+attention+ctc的机制，将模型加深，目前正在进行模型搭建。
 ```
-
-
-
 
 
 ## 参考
@@ -110,4 +97,3 @@ parser.add_argument(
 - [tensorflow-crnn](https://github.com/ilovin/lstm_ctc_ocr)
 - [tensorflow-ctpn](https://github.com/eragonruan/text-detection-ctpn )
 - [CAFFE-CTPN](https://github.com/tianzhi0549/CTPN)
-
