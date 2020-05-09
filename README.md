@@ -9,7 +9,7 @@
 - 不定长OCR识别
 
 
-## 环境部署
+# 环境部署
 ``` 
 Bash
 ##GPU环境
@@ -63,11 +63,11 @@ MODEL_PATH---指向模型训练保存的位置
 parser.add_argument(
     '--crnn',
     help="path to crnn (to continue training)",
-    default=预训练权重的路径，看你下载的预训练权重在哪啦)
+    default=预训练权重的路径)
 parser.add_argument(
     '--experiment',
     help='Where to store samples and models',
-    default=模型训练的权重保存位置,这个自己指定)
+    default=模型训练的权重保存位置)
 ```
 [pytorch预训练权重](https://pan.baidu.com/s/1LEDNHEr3luloB7eZK6GOeA)
 
