@@ -1,15 +1,14 @@
 # 基于tensorflow、keras/pytorch实现对图片文字检测及端到端的OCR中文文字识别
 
 
-
-# 实现功能
+## 实现功能
 
 - 文字方向检测 0、90、180、270度检测 
 - 文字检测 后期将切换到keras版本文本检测 实现keras端到端的文本检测及识别
 - 不定长OCR识别
 
 
-# 环境部署
+## 环境部署
 ``` 
 Bash
 ##GPU环境
@@ -21,26 +20,26 @@ sh setup-python3.sh
 使用环境：python3.6+tensorflow1.7+cpu/gpu
 ```
 
-# 模型训练
+## 模型训练
 * 一共分为3个网络
 * 	**1. 文本方向检测网络-Classify(vgg16)**
 *  **2. 文本区域检测网络-CTPN(CNN+RNN)**
 *  **3. EndToEnd文本识别网络-CRNN(CNN+GRU/LSTM+CTC)**
 
-# 文字方向检测-vgg分类
+## 文字方向检测-vgg分类
 ```
 基于图像分类，在VGG16模型的基础上，训练0、90、180、270度检测的分类模型.
 详细代码参考angle/predict.py文件，训练图片8000张，准确率88.23%
 ```
 模型地址[BaiduCloud](https://pan.baidu.com/s/1zquQNdO0MUsLMsuwxbgPYg)
 
-# 文字区域检测CTPN
+## 文字区域检测CTPN
 支持CPU、GPU环境，一键部署，
 [文本检测训练参考](https://github.com/eragonruan/text-detection-ctpn)  
  
 
-# OCR 端到端识别:CRNN
-## ocr识别采用GRU+CTC端到端识别技术，实现不分隔识别不定长文字
+## OCR 端到端识别:CRNN
+### ocr识别采用GRU+CTC端到端识别技术，实现不分隔识别不定长文字
 提供keras 与pytorch版本的训练代码，在理解keras的基础上，可以切换到pytorch版本，此版本更稳定
 
 
@@ -71,8 +70,8 @@ parser.add_argument(
 [pytorch预训练权重](https://pan.baidu.com/s/1LEDNHEr3luloB7eZK6GOeA)
 
 
-# 识别结果显示
-## 文字检测及OCR识别结果
+## 识别结果显示
+### 文字检测及OCR识别结果
 ![示例图像1](./img/tmp1.png)
 `===========================================================`
 ![ctpn+crnn结果1](./img/tmp1识别结果.png)
@@ -88,6 +87,9 @@ parser.add_argument(
 使用多层双向动态rnn+attention+ctc的机制，将模型加深，目前正在进行模型搭建。
 ```
 
+## 在思乐中的运用
+从主播的直播间评论区可获得新进入直播间粉丝信息，以及直播间粉丝实时评论，
+在无法获取直播平台数据时，通过CV可提取到需要的用户行为数据，用于用户价值的实时精准分级。
 
 ## 参考
 
